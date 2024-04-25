@@ -21,10 +21,4 @@ object Color{
       b<-colorVariants(dx)
     } yield Color(r,g,b)
   }
-  /*
-  def randomColorSet(n:Int, seed:Option[Long] = None) = {
-    seed.foreach(Random.setSeed)
-    defaultColorSet(n)
-  }
-  */
 }

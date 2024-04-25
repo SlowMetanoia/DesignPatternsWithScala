@@ -4,7 +4,7 @@ import Shapes.Rectangle
 
 import java.awt.{BorderLayout, Color, Dimension, Toolkit}
 import java.io.File
-import javax.swing.JFrame
+import javax.swing.{JFrame, JPanel}
 
 object Frame extends JFrame{
   val actionHandler: ActionHandler.type = ActionHandler
@@ -27,13 +27,14 @@ object Frame extends JFrame{
     windowSize._2
   )
   setLayout(new BorderLayout())
-  add(new DrawerPanel(
-    Shapes.Color.defaultColorSet,
-    ()=>Seq(
-      Rectangle(100,200),
-      Rectangle(200,100)
-    )
-  ))
+  add(new JPanel{add(new DrawerComponent(
+      (_: Int) => Seq(Shapes.Color(0.3, 0.4, 0.4), Shapes.Color(0.5, 0.5, 0.5)),
+      () => Seq(
+        Rectangle(100, 200),
+        Rectangle(200, 100)
+      )
+    ))
+  })
   setJMenuBar(ToolBar)
   revalidate()
 }
