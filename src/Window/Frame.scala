@@ -1,5 +1,7 @@
 package Window
 
+import Shapes.Rectangle
+
 import java.awt.{BorderLayout, Color, Dimension, Toolkit}
 import java.io.File
 import javax.swing.JFrame
@@ -25,6 +27,13 @@ object Frame extends JFrame{
     windowSize._2
   )
   setLayout(new BorderLayout())
+  add(new DrawerPanel(
+    Shapes.Color.defaultColorSet,
+    ()=>Seq(
+      Rectangle(100,200),
+      Rectangle(200,100)
+    )
+  ))
   setJMenuBar(ToolBar)
   revalidate()
 }

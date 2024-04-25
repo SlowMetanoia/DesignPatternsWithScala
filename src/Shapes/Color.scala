@@ -15,9 +15,16 @@ object Color{
     val eachColorVariants = ceil(log(n.toDouble)/log(3.0))
     val dx = 1.0/eachColorVariants
     def colorVariants(dx:Double):LazyList[Double] = series(0.0)(_+dx).takeWhile(_<1)
-    
+    for{
+      r<-colorVariants(dx)
+      g<-colorVariants(dx)
+      b<-colorVariants(dx)
+    } yield Color(r,g,b)
   }
+  /*
   def randomColorSet(n:Int, seed:Option[Long] = None) = {
     seed.foreach(Random.setSeed)
+    defaultColorSet(n)
   }
+  */
 }
