@@ -51,5 +51,5 @@ object ShapeOperations {
     )
     xT
   }
-  def idleTransform = new AffineTransform()
+  val idleTransform = new AffineTransform()
 }

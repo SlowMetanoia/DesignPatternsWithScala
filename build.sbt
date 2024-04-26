@@ -31,7 +31,10 @@ libraryDependencies  ++= Seq(
   // It depends on LGPL code.
   "org.scalanlp" %% "breeze-viz" % "2.1.0"
 )
-
+libraryDependencies ++= Seq(
+  "com.typesafe.scala-logging" %% "scala-logging" % "3.9.5",
+  "ch.qos.logback" % "logback-classic" % "1.3.5"
+)
 Compile / mainClass := Some("ProcTextures")//"SIFPanel"
 
 assembly / mainClass := Some("ProcTextures")//"SIFPanel"

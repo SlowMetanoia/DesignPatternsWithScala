@@ -13,7 +13,7 @@ import java.awt.geom.AffineTransform
  */
 trait Shape extends Serializable{
 
-  val affineTransform:AffineTransform
+  val affineTransform:AffineTransform = ShapeOperations.idleTransform
   def edgePoints: Seq[Point]
   def edges: Seq[Cut] = {
     val points = edgePoints
@@ -39,6 +39,18 @@ trait Shape extends Serializable{
   def rect:Rectangle = {
     val (x,y) = sizes
     Rectangle(x, y)
+  }
+  def appliedTransform(xT:AffineTransform):Shape = {
+    val transform:AffineTransform = affineTransform.clone().asInstanceOf[AffineTransform]
+    transform.concatenate(xT)
+    val points = edgePoints
+      .map(_.point2D)
+      .map(pt=>transform.transform(pt,null))
+      .map(Point.point2D2Point)
+    new Shape {
+      override val affineTransform: AffineTransform = transform
+      override def edgePoints: Seq[Point] = points
+    }
   }
 }
 
