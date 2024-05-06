@@ -1,7 +1,9 @@
 package Window
 
+import FileIO.ShapeSetMediator
+
 import java.io.File
 
 object ApplicationData {
-  var file:Option[File] = None
+  var shapeSetMediator:Option[ShapeSetMediator] = None
 }

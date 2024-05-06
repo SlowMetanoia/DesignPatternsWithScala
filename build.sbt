@@ -35,11 +35,11 @@ libraryDependencies ++= Seq(
   "com.typesafe.scala-logging" %% "scala-logging" % "3.9.5",
   "ch.qos.logback" % "logback-classic" % "1.3.5"
 )
-Compile / mainClass := Some("ProcTextures")//"SIFPanel"
+//Compile / mainClass := Some("ProcTextures")//"SIFPanel"
 
-assembly / mainClass := Some("ProcTextures")//"SIFPanel"
+//assembly / mainClass := Some("ProcTextures")//"SIFPanel"
 
-assemblyMergeStrategy in assembly := {
-  case PathList("META-INF", xs @ _*) => MergeStrategy.discard
-  case x => MergeStrategy.first
-}
+//assemblyMergeStrategy in assembly := {
+//  case PathList("META-INF", xs @ _*) => MergeStrategy.discard
+//  case x => MergeStrategy.first
+//}

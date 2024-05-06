@@ -10,6 +10,7 @@ object FileActionHandler extends ActionHandler[FileAction] {
           case OpenFile => openFile()
           case SaveFile => saveFile()
           case SaveFileAs => saveFileAs()
+          case FileChanged(file) =>
         }
     }
     def openFile(): Unit = {
@@ -18,10 +19,11 @@ object FileActionHandler extends ActionHandler[FileAction] {
       val result = jFileChooser.showOpenDialog(Frame)
       if(result == JFileChooser.APPROVE_OPTION) {
         val selected = jFileChooser.getSelectedFile
-        ApplicationData.file = Some(selected)
-        ActionHandler.handle(FileChanged(selected))
+        //ApplicationData.file = Some(selected)
+        ActionHandler.handle(FileChanged(selected.getPath))
       }
     }
+    def fileChanged() = ???
     def saveFile() = ???
     def saveFileAs() = ???
   }

@@ -2,7 +2,8 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/DesignPatterns.iml" filepath="$PROJECT_DIR$/DesignPatterns.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/designpatternswithscala.iml" filepath="$PROJECT_DIR$/.idea/modules/designpatternswithscala.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/designpatternswithscala-build.iml" filepath="$PROJECT_DIR$/.idea/modules/designpatternswithscala-build.iml" />
     </modules>
   </component>
 </project>

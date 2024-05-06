@@ -1,10 +1,13 @@
 package Window
 
+import com.typesafe.scalalogging.Logger
+
 import java.awt.event.{ActionEvent, ActionListener}
 import javax.swing.{JComboBox, JMenu, JMenuBar, JMenuItem, JPanel, JToolBar}
 
 object ToolBar extends JMenuBar{
-  println("generating toolbar")
+  val logger: Logger = Logger("application")
+  logger.debug("creating toolbar")
   val file = new JMenu("File")
   val open = new JMenuItem("open")
   val save = new JMenuItem("save")
