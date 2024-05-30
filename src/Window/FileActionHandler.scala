@@ -16,7 +16,7 @@ object FileActionHandler extends ActionHandler[FileAction] {
     def openFile(): Unit = {
       val jFileChooser = new JFileChooser()
       jFileChooser.setFileSelectionMode(JFileChooser.FILES_ONLY)
-      val result = jFileChooser.showOpenDialog(Frame)
+      val result = jFileChooser.showOpenDialog(Frame())
       if(result == JFileChooser.APPROVE_OPTION) {
         val selected = jFileChooser.getSelectedFile
         //ApplicationData.file = Some(selected)

@@ -8,7 +8,7 @@ import java.awt.{BorderLayout, Color, Dimension, Toolkit}
 import java.io.File
 import javax.swing.{BoxLayout, JButton, JFrame, JPanel}
 
-object Frame extends JFrame{
+class Frame extends JFrame{
   val logger: Logger = Logger("application")
   logger.debug("creating frame")
   val actionHandler: ActionHandler.type = ActionHandler
@@ -43,4 +43,9 @@ object Frame extends JFrame{
   ), BorderLayout.CENTER)
   setJMenuBar(ToolBar)
   revalidate()
+}
+
+object Frame {
+  val instance:Frame = new Frame()
+  def apply(): Frame = instance
 }
